@@ -2,9 +2,7 @@
 
 # ToyBridge-Releases
 
-ToyBridge installers and updates
-
-# ToyBridge
+Installers and updates for ToyBridge
 
 Drives Intiface toys (Lovense and anything else Intiface Central supports) from VRChat SPS contacts. Built to stay running: start it once and leave it in the tray.
 
