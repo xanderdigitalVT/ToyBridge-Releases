@@ -1,35 +1,58 @@
-<img src="icon.png" width="128" alt="ToyBridge logo">
+<p align="center"><img src="icon.png" alt="ToyBridge logo" width="200"></p>
 
 # ToyBridge-Releases
-
 Installers and updates for ToyBridge
 
-Drives Intiface toys (Lovense and anything else Intiface Central supports) from VRChat SPS contacts. Built to stay running: start it once and leave it in the tray.
+ToyBridge makes your toys react to SPS contacts in VRChat. It connects to toys
+through Intiface Central, so it works with Lovense and anything else Intiface
+supports. Built to stay running: start it once and leave it in the tray.
 
-Current version: **0.2.0**
+**[Download the latest version](https://github.com/xanderdigitalVT/ToyBridge-Releases/releases/latest)**
 
-## What it handles without restarts
-- **VRChat started before or after ToyBridge, or restarted.** ToyBridge listens on UDP 9001, where VRChat always sends OSC, and also advertises itself over OSCQuery. If VRChat sends over OSCQuery, ToyBridge frees 9001 for other apps. If 9001 is taken, it retries every 10s. A watchdog checks every 5s and reopens any listening port that hit an error or was dropped.
-- **Avatar changes.** Values are cleared and the new avatar's SPS parts are read from VRChat's OSCQuery server.
-- **VRChat closing or crashing.** All values drop to zero, so toys stop. This is detected from the Windows process list within about 5 seconds, and also when VRChat stops answering for about 20 seconds. A freeze while a world loads isn't mistaken for a crash.
-- **Other OSC apps.** Only avatar data counts as VRChat, so a stray message from another app can't make ToyBridge stop listening.
-- **A toy rejecting commands.** ToyBridge waits longer between retries (up to 5 seconds) and logs the problem once, not on every try.
-- **Intiface Central closed or restarted.** Reconnects every 3s, and logs the outage once rather than on every try.
-- **Intiface going silent without closing, such as a network drop.** A command with no reply gives up after 5s, and three in a row reconnect.
-- **A failed toy scan, such as Bluetooth being off.** Retries every 5s.
-- **Toys turning off, dropping out or coming back.** It keeps scanning, so they reappear on their own. Settings are saved per toy name, so they come back too.
+## What it does
 
-## Using it
+**Each motor gets its own channel strip, like on a mixing desk:**
+
+- **On / Off:** turns that motor on or off. The big meter shows its current level, and the thin bar beside it shows the raw contact.
+- **Depth / Motion / Mix:** reacts to how deep the contact is, how fast it's moving, or a mix of both.
+- **Min / Max:** Min is the level as soon as anything touches. Max is the strongest it will go.
+- **Routing:** chooses what the motor reacts to (my hands, others' hands, my own parts, others' parts, frotting), which part types, and which SPS parts. If you pick no parts, it follows all of them.
+- **Test:** pulses the motor for a moment.
+
+**It handles these without a restart:**
+
+- **VRChat** starting before or after ToyBridge, restarting, closing or crashing. Toys stop if VRChat closes or crashes.
+- **Avatar changes.** The new avatar's SPS parts are read from VRChat.
+- **Intiface Central** closing, restarting or going silent. ToyBridge keeps trying to reconnect.
+- **Toys** turning off, dropping out or coming back. They reappear on their own, with their settings.
+- **Failed toy scans,** such as Bluetooth being off. ToyBridge keeps retrying.
+
+**Features:**
+
+- **Master and Stop all:** the Master fader scales every toy, and Stop all stops every toy at once. Stop all is in the tray menu too, called Pause.
+- **Automatic updates:** new versions download in the background, and ToyBridge never restarts by itself, so toys won't stop mid-session. Click **Restart to update** in the top bar, or the update installs the next time you quit ToyBridge. **Settings** shows your version and has a **Check now** button.
+
+Your settings are kept in `%APPDATA%\ToyBridge\config.json`, and logs are in the `logs` folder beside it.
+
+## Install
+
+You'll need Windows, [Intiface Central](https://intiface.com) (free), an avatar with SPS, and a toy that Intiface supports. Most toys also need Bluetooth on the PC running Intiface.
+
+1. Download `ToyBridge-<version>.zip` from the [latest release](https://github.com/xanderdigitalVT/ToyBridge-Releases/releases/latest) and extract it.
+2. Run `ToyBridge-Setup-<version>.exe`. If Windows says "Windows protected your PC," click **More info**, then **Run anyway**. This appears because the app isn't code-signed.
+3. Follow the installer. ToyBridge then appears in your Start menu.
+
+To uninstall, open the Start menu and run **Uninstall ToyBridge**. Your settings and logs are kept in case you reinstall.
+
+## Getting started
+
 1. In Intiface Central, press **Start Server**.
-2. In VRChat, turn on OSC (Action Menu → Options → OSC → Enabled).
-3. Each motor gets its own channel strip, like on a mixing desk:
-   - **On / Off** turns that motor on or off. The big meter shows its current level, and the thin bar beside it shows the raw contact.
-   - **Depth / Motion / Mix:** Depth (closer or deeper = stronger), Motion (faster movement = stronger), or Mix.
-   - **Min / Max:** Min is the level as soon as anything touches.
-   - **Routing** opens a panel to choose what the motor reacts to (my hands, others' hands, my own parts, others' parts, frotting), which part types, and which SPS parts. If you pick no parts, it follows all of them.
-   - **Test** pulses the motor for a moment.
-4. The **Master** fader on the right scales every toy. **Stop all** below it, or in the tray menu, stops every toy at once.
-5. **Avatar**, **Log** and **Settings** in the top bar open in a panel on the right. Esc or **Close** hides it.
-6. When a new version has downloaded, **Restart to update** appears in the top bar. ToyBridge never restarts by itself, so toys won't stop mid-session. If you don't click it, the update installs the next time you quit ToyBridge. **Settings** shows your version and has **Check now**.
+2. In VRChat, open the Action Menu, go to **Options → OSC** and turn on **Enabled**.
+3. Turn on your toy. It should appear in ToyBridge on its own. Pair it through Intiface, not through Windows Bluetooth settings.
+4. Press **Test** on a toy's strip. The motor should pulse for a moment.
+
+If Intiface runs on another PC, change the Intiface address in **Settings**.
 
 Don't run OscGoesBrrr at the same time, or both apps will drive the same toys.
+
+Closing the window only hides ToyBridge in the tray. To exit fully, right-click the tray icon and choose **Quit ToyBridge**.
