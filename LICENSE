@@ -1,0 +1,28 @@
+ToyBridge License
+
+Copyright (c) 2026 Xander Digital. All rights reserved, except as stated below.
+
+You may, free of charge:
+
+- Download, install and use ToyBridge for personal use.
+- Share unmodified copies of the ToyBridge installer or release zip with others,
+  as long as this license stays with them and you don't charge for them.
+
+You may not:
+
+- Sell, rent or otherwise charge for ToyBridge.
+- Modify ToyBridge or publish modified copies.
+- Reverse engineer, decompile or disassemble ToyBridge, except where the law
+  gives you that right regardless of this license.
+- Remove or change copyright notices, this license or the ToyBridge name and logo.
+
+This license covers ToyBridge itself. The third-party components included with
+it, such as Electron, stay under their own licenses.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OF OR OTHER DEALINGS IN THE SOFTWARE, INCLUDING ITS USE WITH
+ANY DEVICE. YOU USE ANY CONNECTED DEVICE AT YOUR OWN RISK.
