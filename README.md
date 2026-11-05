@@ -8,6 +8,8 @@ ToyBridge installers and updates
 
 Drives Intiface toys (Lovense and anything else Intiface Central supports) from VRChat SPS contacts. Built to stay running: start it once and leave it in the tray.
 
+Current version: **0.2.0**
+
 ## What it handles without restarts
 - **VRChat started before or after ToyBridge, or restarted.** ToyBridge listens on UDP 9001, where VRChat always sends OSC, and also advertises itself over OSCQuery. If VRChat sends over OSCQuery, ToyBridge frees 9001 for other apps. If 9001 is taken, it retries every 10s. A watchdog checks every 5s and reopens any listening port that hit an error or was dropped.
 - **Avatar changes.** Values are cleared and the new avatar's SPS parts are read from VRChat's OSCQuery server.
@@ -30,5 +32,6 @@ Drives Intiface toys (Lovense and anything else Intiface Central supports) from 
    - **Test** pulses the motor for a moment.
 4. The **Master** fader on the right scales every toy. **Stop all** below it, or in the tray menu, stops every toy at once.
 5. **Avatar**, **Log** and **Settings** in the top bar open in a panel on the right. Esc or **Close** hides it.
+6. When a new version has downloaded, **Restart to update** appears in the top bar. ToyBridge never restarts by itself, so toys won't stop mid-session. If you don't click it, the update installs the next time you quit ToyBridge. **Settings** shows your version and has **Check now**.
 
 Don't run OscGoesBrrr at the same time, or both apps will drive the same toys.
