@@ -22,13 +22,16 @@ supports. Built to stay running: start it once and leave it in the tray.
 **It handles these without a restart:**
 
 - **VRChat** starting before or after ToyBridge, restarting, closing or crashing. Toys stop if VRChat closes or crashes.
-- **Avatar changes.** The new avatar's SPS parts are read from VRChat.
-- **Intiface Central** closing, restarting or going silent. ToyBridge keeps trying to reconnect.
-- **Toys** turning off, dropping out or coming back. They reappear on their own, with their settings.
+- **Avatar changes.** The new avatar's SPS parts are read from VRChat, and your toy settings for that avatar come back.
+- **Intiface Central** closing, restarting or going silent. ToyBridge keeps trying to reconnect, and a tray notice tells you.
+- **Toys** turning off, dropping out or coming back. They reappear on their own, with their settings, and a tray notice names the toy.
 - **Failed toy scans,** such as Bluetooth being off. ToyBridge keeps retrying.
 
 **Features:**
 
+- **Avatar profiles:** each avatar remembers its own routing, Depth / Motion / Mix and Min / Max, which come back when you switch to it. An avatar you haven't used before keeps the current settings with all parts selected, and switching never turns on a toy you switched off. **Avatar** in the top bar lists your saved avatars, and you can turn this off in **Settings**.
+- **Connection notices:** a tray notice appears when Intiface or a toy drops, and again when it returns, so you'll know why the buzzing stopped. Short blips don't count. It's a normal Windows notification, so seeing it in a headset takes an overlay that shows them. You can turn these off in **Settings**.
+- **Clear port messages:** if another app, such as Warudo, holds the port VRChat sends to while VRChat is open, ToyBridge names the app and explains what to do.
 - **Master and Stop all:** the Master fader scales every toy, and Stop all stops every toy at once. Stop all is in the tray menu too, called Pause.
 - **Automatic updates:** new versions download in the background, and ToyBridge never restarts by itself, so toys won't stop mid-session. Click **Restart to update** in the top bar, or the update installs the next time you quit ToyBridge. **Settings** shows your version and has a **Check now** button.
 
