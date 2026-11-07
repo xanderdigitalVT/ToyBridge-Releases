@@ -16,7 +16,7 @@ supports. Built to stay running: start it once and leave it in the tray.
 - **On / Off:** turns that motor on or off. The big meter shows its current level, and the thin bar beside it shows the raw contact.
 - **Depth / Motion / Mix:** reacts to how deep the contact is, how fast it's moving, or a mix of both.
 - **Min / Max:** Min is the level as soon as anything touches. Max is the strongest it will go.
-- **Routing:** chooses what the motor reacts to (my hands, others' hands, my own parts, others' parts, frotting), which part types, and which SPS parts. If you pick no parts, it follows all of them.
+- **Routing:** chooses what the motor reacts to (my hands, others' hands, my own parts, others' parts, frotting), which part types, and which SPS parts. If you pick no parts, it follows all of them. Your own hands and parts start switched off, so an avatar resting against itself doesn't run the toy nonstop; turn them on here if you want them.
 - **Test:** pulses the motor for a moment.
 
 **It handles these without a restart:**
