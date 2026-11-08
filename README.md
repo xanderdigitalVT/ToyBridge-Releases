@@ -16,7 +16,8 @@ supports. Built to stay running: start it once and leave it in the tray.
 - **On / Off:** turns that motor on or off. The big meter shows its current level, and the thin bar beside it shows the raw contact.
 - **Depth / Motion / Mix:** reacts to how deep the contact is, how fast it's moving, or a mix of both.
 - **Min / Max:** Min is the level as soon as anything touches. Max is the strongest it will go.
-- **Routing:** chooses what the motor reacts to (my hands, others' hands, my own parts, others' parts, frotting), which part types, and which SPS parts. If you pick no parts, it follows all of them. Your own hands and parts start switched off, so an avatar resting against itself doesn't run the toy nonstop; turn them on here if you want them.
+- **Routing:** chooses what the motor reacts to (my hands, others' hands, my own parts, others' parts, frotting), which part types, and which SPS parts. If you pick no parts, it follows all of them. Your own hands and parts start switched off, so an avatar resting against itself doesn't run the toy nonstop; turn them on here if you want them. It can also follow any other avatar parameter, such as a toggle.
+- **Response:** sets the motor's curve and smoothing.
 - **Test:** pulses the motor for a moment.
 
 **It handles these without a restart:**
@@ -29,7 +30,10 @@ supports. Built to stay running: start it once and leave it in the tray.
 
 **Features:**
 
-- **Avatar profiles:** each avatar remembers its own routing, Depth / Motion / Mix and Min / Max, which come back when you switch to it. An avatar you haven't used before keeps the current settings with all parts selected, and switching never turns on a toy you switched off. **Avatar** in the top bar lists your saved avatars, and you can turn this off in **Settings**.
+- **Response curves and smoothing:** each toy can use a curve (Linear, Soft, Quick or S-curve) to choose how contact turns into strength, with a graph that shows it. Smoothing eases the toy between strengths over up to 2 seconds, including fading out after contact ends. Both start off. Stop all, a toy's Off switch, Master and closing VRChat still act at once.
+- **Custom parameters:** a toy can follow any other avatar parameter, such as a toggle or a slider, as well as SPS contacts. 0 is nothing and 1 is full, so a toggle runs the toy at full while it's on. An avatar you haven't used before starts with none.
+- **OSC forwarding:** **Settings** can send a copy of VRChat's avatar data to other OSC apps, so they can run alongside ToyBridge. Give each app its own port, such as `127.0.0.1:9002`.
+- **Avatar profiles:** each avatar remembers its own routing, custom parameters, Depth / Motion / Mix, Min / Max, curve and smoothing, which come back when you switch to it. An avatar you haven't used before keeps the current settings with all parts selected, and switching never turns on a toy you switched off. **Avatar** in the top bar lists your saved avatars, and you can turn this off in **Settings**.
 - **Connection notices:** a tray notice appears when Intiface or a toy drops, and again when it returns, so you'll know why the buzzing stopped. Short blips don't count. It's a normal Windows notification, so seeing it in a headset takes an overlay that shows them. You can turn these off in **Settings**.
 - **Clear port messages:** if another app, such as Warudo, holds the port VRChat sends to while VRChat is open, ToyBridge names the app and explains what to do.
 - **Master and Stop all:** the Master fader scales every toy, and Stop all stops every toy at once. Stop all is in the tray menu too, called Pause.
