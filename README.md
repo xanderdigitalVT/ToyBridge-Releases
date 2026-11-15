@@ -43,7 +43,7 @@ Your settings are kept in `%APPDATA%\ToyBridge\config.json`, and logs are in the
 
 ## Install
 
-You'll need Windows, [Intiface Central](https://intiface.com) (free), an avatar with SPS, and a toy that Intiface supports. Most toys also need Bluetooth on the PC running Intiface.
+You'll need Windows, [Intiface Central](https://intiface.com) (free), an avatar with SPS (SPS 3 and earlier both work), and a toy that Intiface supports. Most toys also need Bluetooth on the PC running Intiface.
 
 1. Download `ToyBridge-<version>.zip` from the [latest release](https://github.com/xanderdigitalVT/ToyBridge-Releases/releases/latest) and extract it.
 2. Run `ToyBridge-Setup-<version>.exe`. If Windows says "Windows protected your PC," click **More info**, then **Run anyway**. This appears because the app isn't code-signed.
